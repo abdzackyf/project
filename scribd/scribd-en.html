@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribd Unlocker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+        body, p {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav > p > a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav > p {
+            font-family: 'Inter', sans-serif;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .nav > hr {
+            width: 95%;
+        }
+
+        .centered {
+            width: 100vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+
+        .box {
+            padding: 15px;
+            width: 32vw;
+            height: auto;
+            border: dashed 4px black;
+            border-radius: 12px;
+            background-color: white;
+            /* Text */
+            color: black;
+            font-size: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #link {
+            padding: 5px 5px;
+            margin: 5px 0;
+            width: 95%;
+            font-size: 28px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            width: auto;
+            height: auto;
+            margin: 0;
+            padding: 8px;
+            border: solid 1px black;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            /* Text */
+            color: black;
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            /* Ani */
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+        /* --- ToolTip --- */
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: auto;
+            background-color: #000;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+            border-radius: 10px;
+            /* Position the tooltip text */
+            position: absolute;
+            z-index: 1;
+            top: -2px;
+            left: 120%;
+            /* Fade in tooltip */
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .important {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HTML -->
+    <div class="nav">
+        <p><a href="index.html">abdzackyf</a></p>
+        <hr>
+    </div>
+
+    <div class="centered">
+
+        <div class="box">
+            <p>Scribd Unlocker</p>
+            <br>
+            <input type="text" id="link" name="link" placeholder="Input the ID Here!" required>
+            <br>
+            <button class="btn" onclick="myFunction()">Unlock!</button>
+            <a href="#" id="open" target="_blank"><button class="btn">Open Document</button></a>
+            <button class="btn tooltip">ID?
+                <span class="tooltiptext">
+                    Where is the ID?<br>
+                    The ID is located in the URL after the word "doc" and contains a number.<br>
+                    Example: https://id.scribd.com/doc/<span class="important">127870220</span>/Makalah-Kepemimpinan
+                </span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("link").value;
+            var y = ("https://www.scribd.com/embeds/"+ x +"/content?start_page=1&view_mode=scroll&access_key=key-fFexxf7r1bzEfWu3HKwf");
+            document.getElementById("open").setAttribute('href', y);
+        }
+    </script>
+
+</body>
+</html>
